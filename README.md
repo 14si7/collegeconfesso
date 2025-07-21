@@ -67,40 +67,55 @@ A beautiful, modern React-powered confession platform with GraphQL backend integ
 ## 📁 Project Structure
 
 ```
-confession-website/
-├── client/                 # React frontend application
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   │   ├── ui/         # shadcn/ui component library
-│   │   │   ├── confession-card.tsx
-│   │   │   ├── confession-form.tsx
-│   │   │   ├── search-bar.tsx
-│   │   │   ├── comments-modal.tsx
-│   │   │   ├── navbar.tsx
-│   │   │   └── theme-provider.tsx
-│   │   ├── pages/          # Application pages
-│   │   │   ├── home.tsx
-│   │   │   ├── login.tsx
-│   │   │   ├── register.tsx
-│   │   │   └── not-found.tsx
-│   │   ├── lib/            # Utilities and configurations
-│   │   │   ├── apollo.ts   # GraphQL client setup
-│   │   │   ├── auth.tsx    # Authentication context
-│   │   │   └── utils.ts    # Helper functions
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── App.tsx         # Main application component
-│   │   ├── main.tsx        # Application entry point
-│   │   └── index.css       # Global styles and animations
-│   └── index.html          # HTML template
-├── server/                 # Express server for frontend hosting
-│   ├── index.ts            # Server entry point
-│   └── vite.ts             # Vite development integration
-├── shared/                 # Shared TypeScript types
-│   └── schema.ts           # Data models and validation
-├── package.json            # Dependencies and scripts
-├── tailwind.config.ts      # Tailwind CSS configuration
-├── tsconfig.json           # TypeScript configuration
-└── vite.config.ts          # Vite build configuration
+COLLEGECONFESSO/
+├── comment-service/
+│   ├── models/
+│   ├── node_modules/
+│   ├── .env
+│   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── resolvers.js
+│   └── schema.js
+├── confession-service/
+│   ├── models/
+│   ├── node_modules/
+│   ├── .env
+│   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── resolvers.js
+│   └── schema.js
+├── frontend/
+│   ├── client/
+│   ├── server/
+│   ├── .gitignore
+│   ├── components.json
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.ts
+│   ├── tsconfig.json
+│   └── vite.config.ts
+├── gateway-service/
+│   ├── node_modules/
+│   ├── .env
+│   ├── index.js
+│   ├── package-lock.json
+│   └── package.json
+├── user-service/
+│   ├── logs/
+│   ├── models/
+│   ├── node_modules/
+│   ├── .env
+│   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── resolvers.js
+│   ├── schema.js
+│   ├── .gitignore
+│   ├── LICENSE
+│   └── README.md
 ```
 
 ## 🚀 Quick Start
