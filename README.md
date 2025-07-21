@@ -53,10 +53,12 @@ A beautiful, modern React-powered confession platform with GraphQL backend integ
 - **React Hook Form** with Zod validation
 
 ### Backend Integration
-- **GraphQL API** connection to microservices backend
-- **JWT Authentication** with bearer token headers
-- **Apollo Federation** gateway support
-- **Real-time connection monitoring**
+- **Node.js** with **Express** for server framework
+- **Apollo Server** for GraphQL API
+- **MongoDB** with Mongoose for data storage
+- **Apollo Federation** for microservices schema stitching
+- **JWT** for authentication
+- **bcryptjs** for secret code hashing
 
 ### Development Tools
 - **Vite** for fast development and building
@@ -133,14 +135,17 @@ git clone https://github.com/yourusername/confession-website.git
 cd confession-website
 ```
 
-2. **Install dependencies**
-```bash
-npm install
+2. **Install dependencies for all services**
 ```
-
+cd comment-service && npm install
+cd ../confession-service && npm install
+cd ../gateway-service && npm install
+cd ../user-service && npm install
+cd ../frontend && npm install
+```
 3. **Start the development server**
-```bash
-npm run dev
+```
+cd frontend && npx cross-env NODE_ENV=development tsx server/index.ts
 ```
 
 4. **Open your browser**
@@ -227,78 +232,8 @@ mutation {
 }
 ```
 
-## 🎨 UI Components & Styling
 
-### Design System
-- **Color Palette**: Modern purple gradients with light/dark mode support
-- **Typography**: Clean, readable fonts with proper hierarchy
-- **Spacing**: Consistent 8px grid system
-- **Animations**: Smooth transitions and micro-interactions
-- **Accessibility**: ARIA compliant components from Radix UI
 
-### Key Components
-
-**ConfessionCard**: Beautiful cards with glass morphism effects
-**SearchBar**: Intuitive search with icons and clear functionality  
-**CommentsModal**: Elegant modal dialogs for comment interactions
-**ThemeProvider**: Seamless dark/light mode switching
-**Navbar**: Responsive navigation with theme toggle
-
-### Custom CSS Classes
-```css
-.glass-card          /* Glass morphism effect */
-.gradient-text       /* Animated gradient text */
-.gradient-bg         /* Animated background gradients */
-.card-hover          /* Smooth hover animations */
-.btn-hover           /* Button hover effects */
-.float               /* Floating animations */
-.glow                /* Subtle glow effects */
-```
-
-## 🔧 Development Scripts
-
-```bash
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-
-# Type checking
-npm run check
-
-# Database migrations (if using local DB)
-npm run db:push
-```
-
-## 📱 Screenshots & Demo
-
-*Note: Add screenshots of your application here showing:*
-
-1. **Home Page** - Main confession feed with search bar
-2. **Dark Mode** - Beautiful dark theme interface
-3. **Login Page** - Clean authentication form
-4. **Search Feature** - Real-time search functionality
-5. **Comments Modal** - Interactive comment system
-6. **Mobile View** - Responsive design on mobile devices
-
-## 🚀 Deployment Options
-
-### Option 1: Replit Deployments
-Deploy the full-stack application directly on Replit with both frontend and backend.
-
-### Option 2: Vercel + Backend Host
-- Deploy frontend to Vercel
-- Deploy GraphQL backend to Railway/Heroku
-- Update GraphQL endpoint in production
-
-### Option 3: GitHub Pages (Frontend Only)
-- Build static frontend for GitHub Pages
-- Host GraphQL backend separately
-- Configure environment variables for production API endpoint
 
 ## 🤝 Contributing
 
@@ -310,14 +245,14 @@ Deploy the full-stack application directly on Replit with both frontend and back
 
 ## 📋 To-Do / Future Enhancements
 
-- [ ] Real-time notifications for new comments
-- [ ] User profiles and confession history
-- [ ] Image upload support for confessions
+- [ ] Real-time GraphQL subscriptions for comment updates
+- [ ] UUser profiles and confession history
 - [ ] Confession categories and tags
 - [ ] Advanced search filters (date, category)
 - [ ] Report/moderation system
-- [ ] PWA support for mobile app experience
-- [ ] Email notifications for interactions
+- [ ] Rate limiting and input sanitization
+- [ ] Kubernetes/Docker Compose for service orchestration
+- [ ] Monitoring with Prometheus/Grafana
 
 ## 📄 License
 
@@ -325,19 +260,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Radix UI** for accessible component primitives
-- **Tailwind CSS** for the utility-first CSS framework
 - **Apollo GraphQL** for excellent GraphQL client
 - **React Team** for the amazing frontend framework
 - **Vite** for lightning-fast development experience
+- **MongoDB** for flexible NoSQL database
+- **Node.js** and **Express** for reliable backend framework
 
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/confession-website/issues) section
-2. Create a new issue with detailed description
-3. Join our community discussions
 
 ---
 
